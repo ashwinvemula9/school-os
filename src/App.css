@@ -7,6 +7,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(./assests/registration-bg.jpg);
+  overflow: scroll;
 }
 
 .nav {

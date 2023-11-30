@@ -4,10 +4,16 @@ export const FACILITY = "admin";
 
 export const PARENT = "parent";
 
+export const SYS_ADMIN = "system admin";
+
 export const FACILITY_REG = [
   {
     label: "Name",
     key: "name",
+  },
+  {
+    label: "Email",
+    key: "email",
   },
   {
     label: "License No",
@@ -33,6 +39,10 @@ export const TEACHER_REG = [
     key: "mobile_no",
   },
   {
+    label: "Email",
+    key: "email",
+  },
+  {
     label: "Experince",
     key: "experince",
   },
@@ -47,6 +57,11 @@ export const TEACHER_REG = [
   {
     label: "Address",
     key: "address",
+  },
+  {
+    label: "Admin",
+    key: "parent",
+    isDropDown: true,
   },
 ];
 
@@ -64,6 +79,10 @@ export const PARENT_REG = [
     key: "mobile_no",
   },
   {
+    label: "Email",
+    key: "email",
+  },
+  {
     label: "Allergies",
     key: "allergies",
   },
@@ -74,6 +93,17 @@ export const PARENT_REG = [
   {
     label: "Address",
     key: "address",
+  },
+  {
+    label: "Teacher",
+    key: "dropdown",
+    isDropDown: true,
+  },
+  {
+    label: "Age",
+    key: "age",
+    isDropDown: true,
+    options: ["infants", "Toddler", "Twaddler", "3 Years Old", "4 Years Old"],
   },
 ];
 
@@ -99,3 +129,11 @@ export const LOGIN_FIELDS = [
     key: "password",
   },
 ];
+
+export const BE_ENDPOINT = "http://localhost:7000";
+
+export const UNDER_USERS = {
+  [SYS_ADMIN]: "Admin",
+  [FACILITY]: "Teacher",
+  [TEACHER]: "Parent",
+};

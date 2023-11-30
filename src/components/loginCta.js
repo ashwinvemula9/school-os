@@ -1,10 +1,9 @@
 import * as React from "react";
-import { styled, alpha } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { useNavigate } from "react-router-dom";
-import { FACILITY, PARENT, TEACHER } from "../constants";
+import { FACILITY, PARENT, SYS_ADMIN, TEACHER } from "../constants";
 
 export default function LoginCta() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -42,6 +41,9 @@ export default function LoginCta() {
         open={open}
         onClose={handleClose}
       >
+        <MenuItem disableRipple onClick={() => handleNavigate(SYS_ADMIN)}>
+          Login as system admin
+        </MenuItem>
         <MenuItem disableRipple onClick={() => handleNavigate(FACILITY)}>
           Login as Admin
         </MenuItem>
