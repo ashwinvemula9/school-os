@@ -1,0 +1,83 @@
+.registration-root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* background: url(paper.gif); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(./assests/registration-bg.jpg);
+}
+
+.nav {
+  width: 100%;
+  /* background-color: skyblue; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.logo, .signin, .register {
+  font-weight: 700;
+  font-size: large;
+  padding: 0 30px;
+  border: none;
+  background-color: #fff;
+}
+
+.signin:hover, .register:hover, .register-btn:hover{
+  cursor: pointer;
+}
+
+.content {
+  min-height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-left, .content-right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.left-content {
+  padding: 20px;
+  width: 60%;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+.subtitle {
+  font-size: large;
+  font-weight: 800;
+}
+
+.img-right {
+  width: 75%;
+}
+
+.register-btn {
+  position: absolute;
+  left: 48%;
+  top: 50%;
+  background-color: #c32fa0;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+footer {
+  color: white;
+  background-color: black;
+  padding: 10px;
+  text-align: center;
+  height: 40px;
+}
