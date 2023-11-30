@@ -213,7 +213,11 @@ export default function Dashboard() {
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  {item.child && renderSubTree(item.child)}
+                  {item.child
+                    ? renderSubTree(item.child)
+                    : `No ${
+                        UNDER_USERS[UNDER_USERS[enrollFor]] ?? "Child/parent"
+                      } mapped for you`}
                 </AccordionDetails>
               </Accordion>
             </div>
@@ -229,10 +233,42 @@ export default function Dashboard() {
         <div>
           <span className="logo">Logo</span>
         </div>
-        <Box width="10%">
-          <Button onClick={() => navigate("/")} color="secondary">
-            Home
-          </Button>
+        <Box mr={4}>
+          <Stack spacing={2} direction="row">
+            {[SYS_ADMIN, FACILITY]?.includes(enrollFor) && (
+              <Button
+                onClick={() => navigate(`/registration?enroll=${TEACHER}`)}
+                color="secondary"
+                sx={{
+                  borderColor: "#c32fa0",
+                  color: "#c32fa0",
+                }}
+              >
+                Register a Teacher
+              </Button>
+            )}
+            {FACILITY === enrollFor && (
+              <Button
+                onClick={() => navigate(`/registration?enroll=${PARENT}`)}
+                color="secondary"
+                sx={{
+                  borderColor: "#c32fa0",
+                  color: "#c32fa0",
+                }}
+              >
+                Register a Child/parent
+              </Button>
+            )}
+            <Button
+              sx={{
+                backgroundColor: "#c32fa0",
+              }}
+              onClick={() => navigate(`/`)}
+              variant="filled"
+            >
+              Home
+            </Button>
+          </Stack>
         </Box>
       </nav>
       {renderTree()}
